@@ -9,21 +9,14 @@
    (Take data from DB not from Rick & Morty API).
 
 ### Technologies to use:
-1. Public API: https://rickandmortyapi.com/documentation.
+1. Public API: d.
 2. Use Celery as task scheduler for data synchronization for Rick & Morty API.
 3. Python, Django/Flask/FastAPI, ORM, PostgreSQL, Git.
 4. All endpoints should be documented via Swagger.
 
 
 ### How to run 
-- Create venv: `python -m venv venv`
-- Activate it: `source venv/bin/activate`
-- Install requirements: `pip install requirements.txt`
-- Create new Postgres DB & User
-- Copy .env.sample -> .env and populate
-- Run migrations: `python manage.py migrate`
-- Run Redis server: `docker run -d -p 6379:6379 redis`
-- Run celery worker for tasks handling: `celery -A rick_and_morty worker -l info -P gevent`
-- Run celery beat for task scheduling: `celery -A rick_and_morty beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler`
-- Create schedule for running sync in DB
-- Run app: `python manage.py runserver`
+### How to run:
+- Copy .env.sample -> .env and populate with all required data
+- `docker-compose up --build`
+- Create admin user & Create schedule for running sync in DB

@@ -132,10 +132,11 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-RICK_AND_MORTY_API_CHARACTERS_URL = "https://rickandmortyapi.com/api/character"
+RICK_AND_MORTY_API_CHARACTERS_URL = "https://rickandmortyapi.com/graphql"
 
 REST_FRAMEWORK = {
-    # YOUR SETTINGS
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 6,
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
